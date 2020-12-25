@@ -39,21 +39,6 @@ public class FlightApiTest {
     private final FlightApi api = new FlightApi();
 
     /**
-     * airRevalidate service to check if flight is still bookable
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void flightAirRevalidateTest() throws ApiException {
-        FlightBookingKeyRequest body = null;
-        FlightFareResponse response = api.flightAirRevalidate(body);
-
-        // TODO: test validations
-    }
-    /**
      * airport autocomplete service
      *
      * 
@@ -99,7 +84,7 @@ public class FlightApiTest {
         // TODO: test validations
     }
     /**
-     * flight fare service, this service provide the airline fare rules
+     * fare service to check if flight is still bookable
      *
      * 
      *
@@ -109,7 +94,22 @@ public class FlightApiTest {
     @Test
     public void flightFareTest() throws ApiException {
         FlightBookingKeyRequest body = null;
-        FlightFareRulesResponse response = api.flightFare(body);
+        FlightFareResponse response = api.flightFare(body);
+
+        // TODO: test validations
+    }
+    /**
+     * flight fare rules service, this service provide the airline fare rules
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void flightFareRulesTest() throws ApiException {
+        FlightBookingKeyRequest body = null;
+        FlightFareRulesResponse response = api.flightFareRules(body);
 
         // TODO: test validations
     }

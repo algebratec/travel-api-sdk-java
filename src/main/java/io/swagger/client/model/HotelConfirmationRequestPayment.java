@@ -25,7 +25,7 @@ import java.io.IOException;
  * HotelConfirmationRequestPayment
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")
 public class HotelConfirmationRequestPayment {
   /**
    * Gets or Sets method

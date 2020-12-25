@@ -4,68 +4,15 @@ All URIs are relative to *https://virtserver.swaggerhub.com/alswagger/travel-api
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**flightAirRevalidate**](FlightApi.md#flightAirRevalidate) | **POST** /v1/flight/booking/fare | airRevalidate service to check if flight is still bookable
 [**flightAirportAutocomplete**](FlightApi.md#flightAirportAutocomplete) | **GET** /v1/flight/booking/airport/{term} | airport autocomplete service
 [**flightAvailability**](FlightApi.md#flightAvailability) | **POST** /v1/flight/booking/availability | flight availability service
 [**flightBookingConfirmaiton**](FlightApi.md#flightBookingConfirmaiton) | **POST** /v1/flight/booking/confirmation | confirm flight booking
-[**flightFare**](FlightApi.md#flightFare) | **POST** /v1/flight/booking/fareRules | flight fare service, this service provide the airline fare rules
+[**flightFare**](FlightApi.md#flightFare) | **POST** /v1/flight/booking/fare | fare service to check if flight is still bookable
+[**flightFareRules**](FlightApi.md#flightFareRules) | **POST** /v1/flight/booking/fareRules | flight fare rules service, this service provide the airline fare rules
 [**flightOnHoldBookingConfirmation**](FlightApi.md#flightOnHoldBookingConfirmation) | **POST** /v1/flight/booking/confirmOnHoldBooking/{bookingId} | confirm on hold flight booking
 [**flightRefreshPNR**](FlightApi.md#flightRefreshPNR) | **POST** /v1/flight/booking/refresh/{bookingId} | Refresh flight booking using booking id
 [**flightRetrievePNR**](FlightApi.md#flightRetrievePNR) | **GET** /v1/flight/booking/retrievePNR/{recordLocator} | retrieve PNR using PNR record
 [**flightVoidPNR**](FlightApi.md#flightVoidPNR) | **DELETE** /v1/flight/booking/voidPNR/{bookingId} | void PNR service, this service should be used in non BSP market to cancel the PNR before midnight
-
-<a name="flightAirRevalidate"></a>
-# **flightAirRevalidate**
-> FlightFareResponse flightAirRevalidate(body)
-
-airRevalidate service to check if flight is still bookable
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlightApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_auth
-ApiKeyAuth api_auth = (ApiKeyAuth) defaultClient.getAuthentication("api_auth");
-api_auth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_auth.setApiKeyPrefix("Token");
-
-FlightApi apiInstance = new FlightApi();
-FlightBookingKeyRequest body = new FlightBookingKeyRequest(); // FlightBookingKeyRequest | 
-try {
-    FlightFareResponse result = apiInstance.flightAirRevalidate(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FlightApi#flightAirRevalidate");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**FlightBookingKeyRequest**](FlightBookingKeyRequest.md)|  | [optional]
-
-### Return type
-
-[**FlightFareResponse**](FlightFareResponse.md)
-
-### Authorization
-
-[api_auth](../README.md#api_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: json
 
 <a name="flightAirportAutocomplete"></a>
 # **flightAirportAutocomplete**
@@ -228,9 +175,9 @@ Name | Type | Description  | Notes
 
 <a name="flightFare"></a>
 # **flightFare**
-> FlightFareRulesResponse flightFare(body)
+> FlightFareResponse flightFare(body)
 
-flight fare service, this service provide the airline fare rules
+fare service to check if flight is still bookable
 
 ### Example
 ```java
@@ -252,10 +199,63 @@ api_auth.setApiKey("YOUR API KEY");
 FlightApi apiInstance = new FlightApi();
 FlightBookingKeyRequest body = new FlightBookingKeyRequest(); // FlightBookingKeyRequest | 
 try {
-    FlightFareRulesResponse result = apiInstance.flightFare(body);
+    FlightFareResponse result = apiInstance.flightFare(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlightApi#flightFare");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**FlightBookingKeyRequest**](FlightBookingKeyRequest.md)|  | [optional]
+
+### Return type
+
+[**FlightFareResponse**](FlightFareResponse.md)
+
+### Authorization
+
+[api_auth](../README.md#api_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: json
+
+<a name="flightFareRules"></a>
+# **flightFareRules**
+> FlightFareRulesResponse flightFareRules(body)
+
+flight fare rules service, this service provide the airline fare rules
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.FlightApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_auth
+ApiKeyAuth api_auth = (ApiKeyAuth) defaultClient.getAuthentication("api_auth");
+api_auth.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_auth.setApiKeyPrefix("Token");
+
+FlightApi apiInstance = new FlightApi();
+FlightBookingKeyRequest body = new FlightBookingKeyRequest(); // FlightBookingKeyRequest | 
+try {
+    FlightFareRulesResponse result = apiInstance.flightFareRules(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlightApi#flightFareRules");
     e.printStackTrace();
 }
 ```

@@ -62,126 +62,6 @@ public class FlightApi {
     }
 
     /**
-     * Build call for flightAirRevalidate
-     * @param body  (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call flightAirRevalidateCall(FlightBookingKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
-        
-        // create path and map variables
-        String localVarPath = "/v1/flight/booking/fare";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "api_auth" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call flightAirRevalidateValidateBeforeCall(FlightBookingKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        com.squareup.okhttp.Call call = flightAirRevalidateCall(body, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * airRevalidate service to check if flight is still bookable
-     * 
-     * @param body  (optional)
-     * @return FlightFareResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public FlightFareResponse flightAirRevalidate(FlightBookingKeyRequest body) throws ApiException {
-        ApiResponse<FlightFareResponse> resp = flightAirRevalidateWithHttpInfo(body);
-        return resp.getData();
-    }
-
-    /**
-     * airRevalidate service to check if flight is still bookable
-     * 
-     * @param body  (optional)
-     * @return ApiResponse&lt;FlightFareResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<FlightFareResponse> flightAirRevalidateWithHttpInfo(FlightBookingKeyRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = flightAirRevalidateValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<FlightFareResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * airRevalidate service to check if flight is still bookable (asynchronously)
-     * 
-     * @param body  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call flightAirRevalidateAsync(FlightBookingKeyRequest body, final ApiCallback<FlightFareResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = flightAirRevalidateValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<FlightFareResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for flightAirportAutocomplete
      * @param term  (required)
      * @param progressListener Progress listener
@@ -558,7 +438,7 @@ public class FlightApi {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/v1/flight/booking/fareRules";
+        String localVarPath = "/v1/flight/booking/fare";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -608,39 +488,39 @@ public class FlightApi {
     }
 
     /**
-     * flight fare service, this service provide the airline fare rules
+     * fare service to check if flight is still bookable
      * 
      * @param body  (optional)
-     * @return FlightFareRulesResponse
+     * @return FlightFareResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FlightFareRulesResponse flightFare(FlightBookingKeyRequest body) throws ApiException {
-        ApiResponse<FlightFareRulesResponse> resp = flightFareWithHttpInfo(body);
+    public FlightFareResponse flightFare(FlightBookingKeyRequest body) throws ApiException {
+        ApiResponse<FlightFareResponse> resp = flightFareWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * flight fare service, this service provide the airline fare rules
+     * fare service to check if flight is still bookable
      * 
      * @param body  (optional)
-     * @return ApiResponse&lt;FlightFareRulesResponse&gt;
+     * @return ApiResponse&lt;FlightFareResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FlightFareRulesResponse> flightFareWithHttpInfo(FlightBookingKeyRequest body) throws ApiException {
+    public ApiResponse<FlightFareResponse> flightFareWithHttpInfo(FlightBookingKeyRequest body) throws ApiException {
         com.squareup.okhttp.Call call = flightFareValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<FlightFareRulesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<FlightFareResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * flight fare service, this service provide the airline fare rules (asynchronously)
+     * fare service to check if flight is still bookable (asynchronously)
      * 
      * @param body  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call flightFareAsync(FlightBookingKeyRequest body, final ApiCallback<FlightFareRulesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call flightFareAsync(FlightBookingKeyRequest body, final ApiCallback<FlightFareResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -662,6 +542,126 @@ public class FlightApi {
         }
 
         com.squareup.okhttp.Call call = flightFareValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FlightFareResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for flightFareRules
+     * @param body  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call flightFareRulesCall(FlightBookingKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/v1/flight/booking/fareRules";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_auth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call flightFareRulesValidateBeforeCall(FlightBookingKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        com.squareup.okhttp.Call call = flightFareRulesCall(body, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * flight fare rules service, this service provide the airline fare rules
+     * 
+     * @param body  (optional)
+     * @return FlightFareRulesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FlightFareRulesResponse flightFareRules(FlightBookingKeyRequest body) throws ApiException {
+        ApiResponse<FlightFareRulesResponse> resp = flightFareRulesWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * flight fare rules service, this service provide the airline fare rules
+     * 
+     * @param body  (optional)
+     * @return ApiResponse&lt;FlightFareRulesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FlightFareRulesResponse> flightFareRulesWithHttpInfo(FlightBookingKeyRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = flightFareRulesValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<FlightFareRulesResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * flight fare rules service, this service provide the airline fare rules (asynchronously)
+     * 
+     * @param body  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call flightFareRulesAsync(FlightBookingKeyRequest body, final ApiCallback<FlightFareRulesResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = flightFareRulesValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FlightFareRulesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
