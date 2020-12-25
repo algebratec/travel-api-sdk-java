@@ -19,44 +19,54 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.FlightAvailabilitySubRecommendationBounds;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
- * HotelAvailabilityResponseHotelsCombinations
+ * Provider
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
-public class HotelAvailabilityResponseHotelsCombinations {
-  @SerializedName("rooms")
-  private List<FlightAvailabilitySubRecommendationBounds> rooms = null;
+public class Provider {
+  @SerializedName("name")
+  private String name = null;
 
-  public HotelAvailabilityResponseHotelsCombinations rooms(List<FlightAvailabilitySubRecommendationBounds> rooms) {
-    this.rooms = rooms;
-    return this;
-  }
+  @SerializedName("code")
+  private String code = null;
 
-  public HotelAvailabilityResponseHotelsCombinations addRoomsItem(FlightAvailabilitySubRecommendationBounds roomsItem) {
-    if (this.rooms == null) {
-      this.rooms = new ArrayList<FlightAvailabilitySubRecommendationBounds>();
-    }
-    this.rooms.add(roomsItem);
+  public Provider name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get rooms
-   * @return rooms
+   * Get name
+   * @return name
   **/
   @Schema(description = "")
-  public List<FlightAvailabilitySubRecommendationBounds> getRooms() {
-    return rooms;
+  public String getName() {
+    return name;
   }
 
-  public void setRooms(List<FlightAvailabilitySubRecommendationBounds> rooms) {
-    this.rooms = rooms;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Provider code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @Schema(description = "")
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -68,22 +78,24 @@ public class HotelAvailabilityResponseHotelsCombinations {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    HotelAvailabilityResponseHotelsCombinations hotelAvailabilityResponseHotelsCombinations = (HotelAvailabilityResponseHotelsCombinations) o;
-    return Objects.equals(this.rooms, hotelAvailabilityResponseHotelsCombinations.rooms);
+    Provider provider = (Provider) o;
+    return Objects.equals(this.name, provider.name) &&
+        Objects.equals(this.code, provider.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rooms);
+    return Objects.hash(name, code);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class HotelAvailabilityResponseHotelsCombinations {\n");
+    sb.append("class Provider {\n");
     
-    sb.append("    rooms: ").append(toIndentedString(rooms)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,6 +22,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.AlgebratecResponse;
 import io.swagger.client.model.Error;
 import io.swagger.client.model.FlightFare;
+import io.swagger.client.model.Provider;
+import io.swagger.client.model.Supplier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.List;
@@ -29,7 +31,7 @@ import java.util.List;
  * FlightFareResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class FlightFareResponse extends AlgebratecResponse {
   @SerializedName("fare")
   private FlightFare fare = null;

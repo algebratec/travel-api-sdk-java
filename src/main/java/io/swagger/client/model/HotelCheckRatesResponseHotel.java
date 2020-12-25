@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.HotelCheckRatesResponseHotelRooms;
-import io.swagger.client.model.Supplier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ import org.threeten.bp.LocalDate;
  * HotelCheckRatesResponseHotel
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class HotelCheckRatesResponseHotel {
   @SerializedName("code")
   private String code = null;
@@ -135,9 +134,6 @@ public class HotelCheckRatesResponseHotel {
 
   @SerializedName("rooms")
   private List<HotelCheckRatesResponseHotelRooms> rooms = null;
-
-  @SerializedName("suppliers")
-  private List<Supplier> suppliers = null;
 
   public HotelCheckRatesResponseHotel code(String code) {
     this.code = code;
@@ -507,32 +503,6 @@ public class HotelCheckRatesResponseHotel {
     this.rooms = rooms;
   }
 
-  public HotelCheckRatesResponseHotel suppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-    return this;
-  }
-
-  public HotelCheckRatesResponseHotel addSuppliersItem(Supplier suppliersItem) {
-    if (this.suppliers == null) {
-      this.suppliers = new ArrayList<Supplier>();
-    }
-    this.suppliers.add(suppliersItem);
-    return this;
-  }
-
-   /**
-   * Get suppliers
-   * @return suppliers
-  **/
-  @Schema(description = "")
-  public List<Supplier> getSuppliers() {
-    return suppliers;
-  }
-
-  public void setSuppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -562,13 +532,12 @@ public class HotelCheckRatesResponseHotel {
         Objects.equals(this.currency, hotelCheckRatesResponseHotel.currency) &&
         Objects.equals(this.checkIn, hotelCheckRatesResponseHotel.checkIn) &&
         Objects.equals(this.checkOut, hotelCheckRatesResponseHotel.checkOut) &&
-        Objects.equals(this.rooms, hotelCheckRatesResponseHotel.rooms) &&
-        Objects.equals(this.suppliers, hotelCheckRatesResponseHotel.suppliers);
+        Objects.equals(this.rooms, hotelCheckRatesResponseHotel.rooms);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, name, description, providerName, address, country, phone, mail, fax, image, category, zoneCode, latitude, longitude, zoneName, totalPrice, currency, checkIn, checkOut, rooms, suppliers);
+    return Objects.hash(code, name, description, providerName, address, country, phone, mail, fax, image, category, zoneCode, latitude, longitude, zoneName, totalPrice, currency, checkIn, checkOut, rooms);
   }
 
 
@@ -597,7 +566,6 @@ public class HotelCheckRatesResponseHotel {
     sb.append("    checkIn: ").append(toIndentedString(checkIn)).append("\n");
     sb.append("    checkOut: ").append(toIndentedString(checkOut)).append("\n");
     sb.append("    rooms: ").append(toIndentedString(rooms)).append("\n");
-    sb.append("    suppliers: ").append(toIndentedString(suppliers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

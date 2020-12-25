@@ -31,7 +31,7 @@ import java.util.List;
  * FlightAvailability
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class FlightAvailability {
   @SerializedName("airlineDictionary")
   private List<FlightAirline> airlineDictionary = null;

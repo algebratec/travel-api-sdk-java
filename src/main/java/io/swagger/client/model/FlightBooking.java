@@ -33,7 +33,7 @@ import java.util.List;
  * FlightBooking
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class FlightBooking {
   @SerializedName("id")
   private Integer id = null;

@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **net** | **Integer** |  |  [optional]
 **adults** | **Integer** |  |  [optional]
 **children** | **Integer** |  |  [optional]
-**cancellationPolicies** | [**List&lt;CancellationPolicy&gt;**](CancellationPolicy.md) |  |  [optional]
+**cancellationPolicies** | [**List&lt;HotelCancellationPolicy&gt;**](HotelCancellationPolicy.md) |  |  [optional]

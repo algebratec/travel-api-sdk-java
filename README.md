@@ -2,7 +2,7 @@
 
 Algebratec API
 - API version: 1.0.0
-  - Build date: 2020-12-24T22:56:10.425Z[GMT]
+  - Build date: 2020-12-25T11:48:12.193Z[GMT]
 
 Learn and test our api with ease
 
@@ -345,7 +345,7 @@ public class FlightApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to */*
+All URIs are relative to *https://virtserver.swaggerhub.com/alswagger/travel-api/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -367,7 +367,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AlgebratecResponse](docs/AlgebratecResponse.md)
- - [CancellationPolicy](docs/CancellationPolicy.md)
  - [Error](docs/Error.md)
  - [ErrorFields](docs/ErrorFields.md)
  - [FlightAirline](docs/FlightAirline.md)
@@ -426,6 +425,7 @@ Class | Method | HTTP request | Description
  - [HotelAvailabilityResponseHotelsRooms](docs/HotelAvailabilityResponseHotelsRooms.md)
  - [HotelAvailabilityResponseHotelsTaxes](docs/HotelAvailabilityResponseHotelsTaxes.md)
  - [HotelAvailabilityResponseHotelsThemes](docs/HotelAvailabilityResponseHotelsThemes.md)
+ - [HotelCancellationPolicy](docs/HotelCancellationPolicy.md)
  - [HotelCancellationResponse](docs/HotelCancellationResponse.md)
  - [HotelCancellationResponseBooking](docs/HotelCancellationResponseBooking.md)
  - [HotelCancellationResponseBookingHotel](docs/HotelCancellationResponseBookingHotel.md)
@@ -449,6 +449,7 @@ Class | Method | HTTP request | Description
  - [HotelConfirmationResponseBookingHotelRooms](docs/HotelConfirmationResponseBookingHotelRooms.md)
  - [HotelRetrieveBookingResponse](docs/HotelRetrieveBookingResponse.md)
  - [HotelRetrieveBookingResponseBooking](docs/HotelRetrieveBookingResponseBooking.md)
+ - [Provider](docs/Provider.md)
  - [Supplier](docs/Supplier.md)
 
 ## Documentation for Authorization

@@ -31,8 +31,11 @@ import java.util.List;
  * FlightRecommendation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class FlightRecommendation {
+  @SerializedName("providerCode")
+  private String providerCode = null;
+
   @SerializedName("baggage")
   private FlightBaggageAllowance baggage = null;
 
@@ -53,6 +56,24 @@ public class FlightRecommendation {
 
   @SerializedName("validatingCarrier")
   private String validatingCarrier = null;
+
+  public FlightRecommendation providerCode(String providerCode) {
+    this.providerCode = providerCode;
+    return this;
+  }
+
+   /**
+   * Get providerCode
+   * @return providerCode
+  **/
+  @Schema(description = "")
+  public String getProviderCode() {
+    return providerCode;
+  }
+
+  public void setProviderCode(String providerCode) {
+    this.providerCode = providerCode;
+  }
 
   public FlightRecommendation baggage(FlightBaggageAllowance baggage) {
     this.baggage = baggage;
@@ -214,7 +235,8 @@ public class FlightRecommendation {
       return false;
     }
     FlightRecommendation flightRecommendation = (FlightRecommendation) o;
-    return Objects.equals(this.baggage, flightRecommendation.baggage) &&
+    return Objects.equals(this.providerCode, flightRecommendation.providerCode) &&
+        Objects.equals(this.baggage, flightRecommendation.baggage) &&
         Objects.equals(this.bookingKey, flightRecommendation.bookingKey) &&
         Objects.equals(this.fareDetails, flightRecommendation.fareDetails) &&
         Objects.equals(this.flights, flightRecommendation.flights) &&
@@ -225,7 +247,7 @@ public class FlightRecommendation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(baggage, bookingKey, fareDetails, flights, price, subRecommendations, validatingCarrier);
+    return Objects.hash(providerCode, baggage, bookingKey, fareDetails, flights, price, subRecommendations, validatingCarrier);
   }
 
 
@@ -234,6 +256,7 @@ public class FlightRecommendation {
     StringBuilder sb = new StringBuilder();
     sb.append("class FlightRecommendation {\n");
     
+    sb.append("    providerCode: ").append(toIndentedString(providerCode)).append("\n");
     sb.append("    baggage: ").append(toIndentedString(baggage)).append("\n");
     sb.append("    bookingKey: ").append(toIndentedString(bookingKey)).append("\n");
     sb.append("    fareDetails: ").append(toIndentedString(fareDetails)).append("\n");

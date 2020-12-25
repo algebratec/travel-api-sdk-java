@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **checkIn** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **checkOut** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **rooms** | [**List&lt;HotelCheckRatesResponseHotelRooms&gt;**](HotelCheckRatesResponseHotelRooms.md) |  |  [optional]
-**suppliers** | [**List&lt;Supplier&gt;**](Supplier.md) |  |  [optional]
 
 <a name="CategoryEnum"></a>
 ## Enum: CategoryEnum

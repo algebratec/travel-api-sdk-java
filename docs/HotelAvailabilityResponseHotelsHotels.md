@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** |  |  [optional]
+**providerCode** | **String** |  |  [optional]
 **contractCode** | **String** |  |  [optional]
 **supplierCode** | **String** |  |  [optional]
 **country** | **String** |  |  [optional]

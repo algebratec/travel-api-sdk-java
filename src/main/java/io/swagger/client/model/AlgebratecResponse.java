@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.Error;
+import io.swagger.client.model.Provider;
+import io.swagger.client.model.Supplier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,13 +30,16 @@ import java.util.List;
  * AlgebratecResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class AlgebratecResponse {
   @SerializedName("errors")
   private List<Error> errors = null;
 
-  @SerializedName("provider")
-  private String provider = null;
+  @SerializedName("providers")
+  private List<Provider> providers = null;
+
+  @SerializedName("suppliers")
+  private List<Supplier> suppliers = null;
 
   @SerializedName("success")
   private Boolean success = null;
@@ -65,22 +70,56 @@ public class AlgebratecResponse {
     this.errors = errors;
   }
 
-  public AlgebratecResponse provider(String provider) {
-    this.provider = provider;
+  public AlgebratecResponse providers(List<Provider> providers) {
+    this.providers = providers;
+    return this;
+  }
+
+  public AlgebratecResponse addProvidersItem(Provider providersItem) {
+    if (this.providers == null) {
+      this.providers = new ArrayList<Provider>();
+    }
+    this.providers.add(providersItem);
     return this;
   }
 
    /**
-   * Get provider
-   * @return provider
+   * Get providers
+   * @return providers
   **/
   @Schema(description = "")
-  public String getProvider() {
-    return provider;
+  public List<Provider> getProviders() {
+    return providers;
   }
 
-  public void setProvider(String provider) {
-    this.provider = provider;
+  public void setProviders(List<Provider> providers) {
+    this.providers = providers;
+  }
+
+  public AlgebratecResponse suppliers(List<Supplier> suppliers) {
+    this.suppliers = suppliers;
+    return this;
+  }
+
+  public AlgebratecResponse addSuppliersItem(Supplier suppliersItem) {
+    if (this.suppliers == null) {
+      this.suppliers = new ArrayList<Supplier>();
+    }
+    this.suppliers.add(suppliersItem);
+    return this;
+  }
+
+   /**
+   * Get suppliers
+   * @return suppliers
+  **/
+  @Schema(description = "")
+  public List<Supplier> getSuppliers() {
+    return suppliers;
+  }
+
+  public void setSuppliers(List<Supplier> suppliers) {
+    this.suppliers = suppliers;
   }
 
   public AlgebratecResponse success(Boolean success) {
@@ -112,13 +151,14 @@ public class AlgebratecResponse {
     }
     AlgebratecResponse algebratecResponse = (AlgebratecResponse) o;
     return Objects.equals(this.errors, algebratecResponse.errors) &&
-        Objects.equals(this.provider, algebratecResponse.provider) &&
+        Objects.equals(this.providers, algebratecResponse.providers) &&
+        Objects.equals(this.suppliers, algebratecResponse.suppliers) &&
         Objects.equals(this.success, algebratecResponse.success);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors, provider, success);
+    return Objects.hash(errors, providers, suppliers, success);
   }
 
 
@@ -128,7 +168,8 @@ public class AlgebratecResponse {
     sb.append("class AlgebratecResponse {\n");
     
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
+    sb.append("    suppliers: ").append(toIndentedString(suppliers)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("}");
     return sb.toString();

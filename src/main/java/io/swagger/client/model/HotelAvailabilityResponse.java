@@ -22,22 +22,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.AlgebratecResponse;
 import io.swagger.client.model.Error;
 import io.swagger.client.model.HotelAvailabilityResponseHotels;
+import io.swagger.client.model.Provider;
 import io.swagger.client.model.Supplier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 /**
  * HotelAvailabilityResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class HotelAvailabilityResponse extends AlgebratecResponse {
   @SerializedName("hotels")
   private HotelAvailabilityResponseHotels hotels = null;
-
-  @SerializedName("suppliers")
-  private List<Supplier> suppliers = null;
 
   public HotelAvailabilityResponse hotels(HotelAvailabilityResponseHotels hotels) {
     this.hotels = hotels;
@@ -57,32 +54,6 @@ public class HotelAvailabilityResponse extends AlgebratecResponse {
     this.hotels = hotels;
   }
 
-  public HotelAvailabilityResponse suppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-    return this;
-  }
-
-  public HotelAvailabilityResponse addSuppliersItem(Supplier suppliersItem) {
-    if (this.suppliers == null) {
-      this.suppliers = new ArrayList<Supplier>();
-    }
-    this.suppliers.add(suppliersItem);
-    return this;
-  }
-
-   /**
-   * Get suppliers
-   * @return suppliers
-  **/
-  @Schema(description = "")
-  public List<Supplier> getSuppliers() {
-    return suppliers;
-  }
-
-  public void setSuppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,13 +65,12 @@ public class HotelAvailabilityResponse extends AlgebratecResponse {
     }
     HotelAvailabilityResponse hotelAvailabilityResponse = (HotelAvailabilityResponse) o;
     return Objects.equals(this.hotels, hotelAvailabilityResponse.hotels) &&
-        Objects.equals(this.suppliers, hotelAvailabilityResponse.suppliers) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hotels, suppliers, super.hashCode());
+    return Objects.hash(hotels, super.hashCode());
   }
 
 
@@ -110,7 +80,6 @@ public class HotelAvailabilityResponse extends AlgebratecResponse {
     sb.append("class HotelAvailabilityResponse {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    hotels: ").append(toIndentedString(hotels)).append("\n");
-    sb.append("    suppliers: ").append(toIndentedString(suppliers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

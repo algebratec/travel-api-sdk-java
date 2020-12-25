@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.CancellationPolicy;
+import io.swagger.client.model.HotelCancellationPolicy;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.List;
  * HotelCheckRatesResponseHotelRates
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class HotelCheckRatesResponseHotelRates {
   @SerializedName("rateKey")
   private String rateKey = null;
@@ -49,7 +49,7 @@ public class HotelCheckRatesResponseHotelRates {
   private Integer children = null;
 
   @SerializedName("cancellationPolicies")
-  private List<CancellationPolicy> cancellationPolicies = null;
+  private List<HotelCancellationPolicy> cancellationPolicies = null;
 
   public HotelCheckRatesResponseHotelRates rateKey(String rateKey) {
     this.rateKey = rateKey;
@@ -159,14 +159,14 @@ public class HotelCheckRatesResponseHotelRates {
     this.children = children;
   }
 
-  public HotelCheckRatesResponseHotelRates cancellationPolicies(List<CancellationPolicy> cancellationPolicies) {
+  public HotelCheckRatesResponseHotelRates cancellationPolicies(List<HotelCancellationPolicy> cancellationPolicies) {
     this.cancellationPolicies = cancellationPolicies;
     return this;
   }
 
-  public HotelCheckRatesResponseHotelRates addCancellationPoliciesItem(CancellationPolicy cancellationPoliciesItem) {
+  public HotelCheckRatesResponseHotelRates addCancellationPoliciesItem(HotelCancellationPolicy cancellationPoliciesItem) {
     if (this.cancellationPolicies == null) {
-      this.cancellationPolicies = new ArrayList<CancellationPolicy>();
+      this.cancellationPolicies = new ArrayList<HotelCancellationPolicy>();
     }
     this.cancellationPolicies.add(cancellationPoliciesItem);
     return this;
@@ -177,11 +177,11 @@ public class HotelCheckRatesResponseHotelRates {
    * @return cancellationPolicies
   **/
   @Schema(description = "")
-  public List<CancellationPolicy> getCancellationPolicies() {
+  public List<HotelCancellationPolicy> getCancellationPolicies() {
     return cancellationPolicies;
   }
 
-  public void setCancellationPolicies(List<CancellationPolicy> cancellationPolicies) {
+  public void setCancellationPolicies(List<HotelCancellationPolicy> cancellationPolicies) {
     this.cancellationPolicies = cancellationPolicies;
   }
 

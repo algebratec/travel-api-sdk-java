@@ -22,22 +22,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.AlgebratecResponse;
 import io.swagger.client.model.Error;
 import io.swagger.client.model.HotelCancellationResponseBooking;
+import io.swagger.client.model.Provider;
 import io.swagger.client.model.Supplier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 /**
  * HotelCancellationResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class HotelCancellationResponse extends AlgebratecResponse {
   @SerializedName("booking")
   private HotelCancellationResponseBooking booking = null;
-
-  @SerializedName("suppliers")
-  private List<Supplier> suppliers = null;
 
   public HotelCancellationResponse booking(HotelCancellationResponseBooking booking) {
     this.booking = booking;
@@ -57,32 +54,6 @@ public class HotelCancellationResponse extends AlgebratecResponse {
     this.booking = booking;
   }
 
-  public HotelCancellationResponse suppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-    return this;
-  }
-
-  public HotelCancellationResponse addSuppliersItem(Supplier suppliersItem) {
-    if (this.suppliers == null) {
-      this.suppliers = new ArrayList<Supplier>();
-    }
-    this.suppliers.add(suppliersItem);
-    return this;
-  }
-
-   /**
-   * Get suppliers
-   * @return suppliers
-  **/
-  @Schema(description = "")
-  public List<Supplier> getSuppliers() {
-    return suppliers;
-  }
-
-  public void setSuppliers(List<Supplier> suppliers) {
-    this.suppliers = suppliers;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,13 +65,12 @@ public class HotelCancellationResponse extends AlgebratecResponse {
     }
     HotelCancellationResponse hotelCancellationResponse = (HotelCancellationResponse) o;
     return Objects.equals(this.booking, hotelCancellationResponse.booking) &&
-        Objects.equals(this.suppliers, hotelCancellationResponse.suppliers) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(booking, suppliers, super.hashCode());
+    return Objects.hash(booking, super.hashCode());
   }
 
 
@@ -110,7 +80,6 @@ public class HotelCancellationResponse extends AlgebratecResponse {
     sb.append("class HotelCancellationResponse {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    booking: ").append(toIndentedString(booking)).append("\n");
-    sb.append("    suppliers: ").append(toIndentedString(suppliers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,10 +33,13 @@ import java.util.List;
  * HotelAvailabilityResponseHotelsHotels
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
 public class HotelAvailabilityResponseHotelsHotels {
   @SerializedName("code")
   private String code = null;
+
+  @SerializedName("providerCode")
+  private String providerCode = null;
 
   @SerializedName("contractCode")
   private String contractCode = null;
@@ -218,6 +221,24 @@ public class HotelAvailabilityResponseHotelsHotels {
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public HotelAvailabilityResponseHotelsHotels providerCode(String providerCode) {
+    this.providerCode = providerCode;
+    return this;
+  }
+
+   /**
+   * Get providerCode
+   * @return providerCode
+  **/
+  @Schema(description = "")
+  public String getProviderCode() {
+    return providerCode;
+  }
+
+  public void setProviderCode(String providerCode) {
+    this.providerCode = providerCode;
   }
 
   public HotelAvailabilityResponseHotelsHotels contractCode(String contractCode) {
@@ -763,6 +784,7 @@ public class HotelAvailabilityResponseHotelsHotels {
     }
     HotelAvailabilityResponseHotelsHotels hotelAvailabilityResponseHotelsHotels = (HotelAvailabilityResponseHotelsHotels) o;
     return Objects.equals(this.code, hotelAvailabilityResponseHotelsHotels.code) &&
+        Objects.equals(this.providerCode, hotelAvailabilityResponseHotelsHotels.providerCode) &&
         Objects.equals(this.contractCode, hotelAvailabilityResponseHotelsHotels.contractCode) &&
         Objects.equals(this.supplierCode, hotelAvailabilityResponseHotelsHotels.supplierCode) &&
         Objects.equals(this.country, hotelAvailabilityResponseHotelsHotels.country) &&
@@ -793,7 +815,7 @@ public class HotelAvailabilityResponseHotelsHotels {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, contractCode, supplierCode, country, name, description, providerName, address, phone, mail, fax, image, images, zoneCode, category, zoneName, comments, latitude, longitude, rooms, accommodations, themes, facilities, prohibitions, extras, combinations, currency);
+    return Objects.hash(code, providerCode, contractCode, supplierCode, country, name, description, providerName, address, phone, mail, fax, image, images, zoneCode, category, zoneName, comments, latitude, longitude, rooms, accommodations, themes, facilities, prohibitions, extras, combinations, currency);
   }
 
 
@@ -803,6 +825,7 @@ public class HotelAvailabilityResponseHotelsHotels {
     sb.append("class HotelAvailabilityResponseHotelsHotels {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    providerCode: ").append(toIndentedString(providerCode)).append("\n");
     sb.append("    contractCode: ").append(toIndentedString(contractCode)).append("\n");
     sb.append("    supplierCode: ").append(toIndentedString(supplierCode)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");

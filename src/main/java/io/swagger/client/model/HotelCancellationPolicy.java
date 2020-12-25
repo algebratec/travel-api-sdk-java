@@ -23,11 +23,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import org.threeten.bp.OffsetDateTime;
 /**
- * CancellationPolicy
+ * HotelCancellationPolicy
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-24T22:56:10.425Z[GMT]")
-public class CancellationPolicy {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T11:48:12.193Z[GMT]")
+public class HotelCancellationPolicy {
   @SerializedName("from")
   private OffsetDateTime from = null;
 
@@ -82,7 +82,7 @@ public class CancellationPolicy {
   @SerializedName("value")
   private Integer value = null;
 
-  public CancellationPolicy from(OffsetDateTime from) {
+  public HotelCancellationPolicy from(OffsetDateTime from) {
     this.from = from;
     return this;
   }
@@ -100,7 +100,7 @@ public class CancellationPolicy {
     this.from = from;
   }
 
-  public CancellationPolicy to(OffsetDateTime to) {
+  public HotelCancellationPolicy to(OffsetDateTime to) {
     this.to = to;
     return this;
   }
@@ -118,7 +118,7 @@ public class CancellationPolicy {
     this.to = to;
   }
 
-  public CancellationPolicy type(TypeEnum type) {
+  public HotelCancellationPolicy type(TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -136,7 +136,7 @@ public class CancellationPolicy {
     this.type = type;
   }
 
-  public CancellationPolicy value(Integer value) {
+  public HotelCancellationPolicy value(Integer value) {
     this.value = value;
     return this;
   }
@@ -163,11 +163,11 @@ public class CancellationPolicy {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CancellationPolicy cancellationPolicy = (CancellationPolicy) o;
-    return Objects.equals(this.from, cancellationPolicy.from) &&
-        Objects.equals(this.to, cancellationPolicy.to) &&
-        Objects.equals(this.type, cancellationPolicy.type) &&
-        Objects.equals(this.value, cancellationPolicy.value);
+    HotelCancellationPolicy hotelCancellationPolicy = (HotelCancellationPolicy) o;
+    return Objects.equals(this.from, hotelCancellationPolicy.from) &&
+        Objects.equals(this.to, hotelCancellationPolicy.to) &&
+        Objects.equals(this.type, hotelCancellationPolicy.type) &&
+        Objects.equals(this.value, hotelCancellationPolicy.value);
   }
 
   @Override
@@ -179,7 +179,7 @@ public class CancellationPolicy {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CancellationPolicy {\n");
+    sb.append("class HotelCancellationPolicy {\n");
     
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
