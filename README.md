@@ -345,7 +345,7 @@ public class FlightApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/alswagger/travel-api/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/alswagger/algebratecAPI/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
