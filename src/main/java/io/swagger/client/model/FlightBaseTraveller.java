@@ -26,7 +26,7 @@ import org.threeten.bp.LocalDate;
  * FlightBaseTraveller
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-27T12:15:25.449Z[GMT]")
 public class FlightBaseTraveller {
   @SerializedName("birthDate")
   private String birthDate = null;
@@ -46,8 +46,49 @@ public class FlightBaseTraveller {
   @SerializedName("passportNumber")
   private String passportNumber = null;
 
-  @SerializedName("sex")
-  private String sex = null;
+  /**
+   * F &#x3D; Female &lt;br&gt; M &#x3D; Male
+   */
+  @JsonAdapter(SexEnum.Adapter.class)
+  public enum SexEnum {
+    F("F"),
+    M("M");
+
+    private String value;
+
+    SexEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static SexEnum fromValue(String text) {
+      for (SexEnum b : SexEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<SexEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SexEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SexEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return SexEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("sex")
+  private SexEnum sex = null;
 
   public FlightBaseTraveller birthDate(String birthDate) {
     this.birthDate = birthDate;
@@ -157,21 +198,21 @@ public class FlightBaseTraveller {
     this.passportNumber = passportNumber;
   }
 
-  public FlightBaseTraveller sex(String sex) {
+  public FlightBaseTraveller sex(SexEnum sex) {
     this.sex = sex;
     return this;
   }
 
    /**
-   * Get sex
+   * F &#x3D; Female &lt;br&gt; M &#x3D; Male
    * @return sex
   **/
-  @Schema(description = "")
-  public String getSex() {
+  @Schema(description = "F = Female <br> M = Male")
+  public SexEnum getSex() {
     return sex;
   }
 
-  public void setSex(String sex) {
+  public void setSex(SexEnum sex) {
     this.sex = sex;
   }
 

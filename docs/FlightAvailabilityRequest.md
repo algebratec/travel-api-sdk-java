@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**language** | [**LanguageEnum**](#LanguageEnum) |  |  [optional]
-**bounds** | [**List&lt;FlightAvailibilityRequestBound&gt;**](FlightAvailibilityRequestBound.md) |  |  [optional]
+**language** | [**LanguageEnum**](#LanguageEnum) | EN &#x3D; English &lt;br&gt; FR &#x3D; French &lt;br&gt; AR &#x3D; Arabic |  [optional]
+**bounds** | [**List&lt;FlightAvailabilityRequestBound&gt;**](FlightAvailabilityRequestBound.md) |  |  [optional]
 **cabinClass** | [**CabinClassEnum**](#CabinClassEnum) | M &#x3D; ECONOMY STANDARD &lt;br&gt; Y &#x3D; ECONOMY &lt;br&gt; W &#x3D; ECONOMY PREMIUM &lt;br&gt; C &#x3D; BUSINESS &lt;br&gt; F &#x3D; FIRST |  [optional]
-**tripType** | [**TripTypeEnum**](#TripTypeEnum) |  |  [optional]
+**tripType** | [**TripTypeEnum**](#TripTypeEnum) | rt &#x3D; Roundtrip &lt;br&gt; ow &#x3D; Oneway &lt;br&gt; md &#x3D; multidestination |  [optional]
 **flexible** | **Boolean** |  |  [optional]
 **range** | **Integer** |  |  [optional]
 **nrOfAdult** | **Integer** |  |  [optional]
@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **nrOfInfantWithSeat** | **Integer** |  |  [optional]
 **nrOfSenior** | **Integer** |  |  [optional]
 **nrOfYouth** | **Integer** |  |  [optional]
-**requestedFlightNonStop** | **Boolean** |  |  [optional]
-**requestedMultiCity** | **Boolean** |  |  [optional]
+**directFlight** | **Boolean** | if true, the system will reply with direct flights only |  [optional]
+**withBaggage** | **Boolean** | if true, the system will reply with recommendations with baggage only |  [optional]
 
 <a name="LanguageEnum"></a>
 ## Enum: LanguageEnum

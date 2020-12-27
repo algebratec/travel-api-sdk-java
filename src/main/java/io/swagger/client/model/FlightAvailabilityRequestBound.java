@@ -22,11 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * FlightAvailibilityRequestBound
+ * FlightAvailabilityRequestBound
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")
-public class FlightAvailibilityRequestBound {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-27T12:15:25.449Z[GMT]")
+public class FlightAvailabilityRequestBound {
   @SerializedName("departureDate")
   private String departureDate = null;
 
@@ -36,7 +36,7 @@ public class FlightAvailibilityRequestBound {
   @SerializedName("origin")
   private String origin = null;
 
-  public FlightAvailibilityRequestBound departureDate(String departureDate) {
+  public FlightAvailabilityRequestBound departureDate(String departureDate) {
     this.departureDate = departureDate;
     return this;
   }
@@ -54,7 +54,7 @@ public class FlightAvailibilityRequestBound {
     this.departureDate = departureDate;
   }
 
-  public FlightAvailibilityRequestBound destination(String destination) {
+  public FlightAvailabilityRequestBound destination(String destination) {
     this.destination = destination;
     return this;
   }
@@ -72,7 +72,7 @@ public class FlightAvailibilityRequestBound {
     this.destination = destination;
   }
 
-  public FlightAvailibilityRequestBound origin(String origin) {
+  public FlightAvailabilityRequestBound origin(String origin) {
     this.origin = origin;
     return this;
   }
@@ -99,10 +99,10 @@ public class FlightAvailibilityRequestBound {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FlightAvailibilityRequestBound flightAvailibilityRequestBound = (FlightAvailibilityRequestBound) o;
-    return Objects.equals(this.departureDate, flightAvailibilityRequestBound.departureDate) &&
-        Objects.equals(this.destination, flightAvailibilityRequestBound.destination) &&
-        Objects.equals(this.origin, flightAvailibilityRequestBound.origin);
+    FlightAvailabilityRequestBound flightAvailabilityRequestBound = (FlightAvailabilityRequestBound) o;
+    return Objects.equals(this.departureDate, flightAvailabilityRequestBound.departureDate) &&
+        Objects.equals(this.destination, flightAvailabilityRequestBound.destination) &&
+        Objects.equals(this.origin, flightAvailabilityRequestBound.origin);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class FlightAvailibilityRequestBound {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FlightAvailibilityRequestBound {\n");
+    sb.append("class FlightAvailabilityRequestBound {\n");
     
     sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");

@@ -2,7 +2,7 @@
 
 Algebratec API
 - API version: 1.0.0
-  - Build date: 2020-12-25T18:44:13.943Z[GMT]
+  - Build date: 2020-12-27T12:15:25.449Z[GMT]
 
 Learn and test our api with ease
 
@@ -378,12 +378,12 @@ Class | Method | HTTP request | Description
  - [FlightAvailabilityFareDetailsFares](docs/FlightAvailabilityFareDetailsFares.md)
  - [FlightAvailabilityGroupOfFlights](docs/FlightAvailabilityGroupOfFlights.md)
  - [FlightAvailabilityRequest](docs/FlightAvailabilityRequest.md)
+ - [FlightAvailabilityRequestBound](docs/FlightAvailabilityRequestBound.md)
  - [FlightAvailabilityResponse](docs/FlightAvailabilityResponse.md)
  - [FlightAvailabilityResponseBound](docs/FlightAvailabilityResponseBound.md)
  - [FlightAvailabilitySegment](docs/FlightAvailabilitySegment.md)
  - [FlightAvailabilitySubRecommendation](docs/FlightAvailabilitySubRecommendation.md)
  - [FlightAvailabilitySubRecommendationBounds](docs/FlightAvailabilitySubRecommendationBounds.md)
- - [FlightAvailibilityRequestBound](docs/FlightAvailibilityRequestBound.md)
  - [FlightBaggageAllowance](docs/FlightBaggageAllowance.md)
  - [FlightBaseTraveller](docs/FlightBaseTraveller.md)
  - [FlightBooking](docs/FlightBooking.md)

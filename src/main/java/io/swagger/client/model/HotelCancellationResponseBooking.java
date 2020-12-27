@@ -28,7 +28,7 @@ import org.threeten.bp.LocalDate;
  * HotelCancellationResponseBooking
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-27T12:15:25.449Z[GMT]")
 public class HotelCancellationResponseBooking {
   @SerializedName("reference")
   private String reference = null;

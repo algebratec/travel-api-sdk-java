@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.FlightAvailibilityRequestBound;
+import io.swagger.client.model.FlightAvailabilityRequestBound;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,10 +28,10 @@ import java.util.List;
  * FlightAvailabilityRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-27T12:15:25.449Z[GMT]")
 public class FlightAvailabilityRequest {
   /**
-   * Gets or Sets language
+   * EN &#x3D; English &lt;br&gt; FR &#x3D; French &lt;br&gt; AR &#x3D; Arabic
    */
   @JsonAdapter(LanguageEnum.Adapter.class)
   public enum LanguageEnum {
@@ -76,7 +76,7 @@ public class FlightAvailabilityRequest {
   private LanguageEnum language = null;
 
   @SerializedName("bounds")
-  private List<FlightAvailibilityRequestBound> bounds = null;
+  private List<FlightAvailabilityRequestBound> bounds = null;
 
   /**
    * M &#x3D; ECONOMY STANDARD &lt;br&gt; Y &#x3D; ECONOMY &lt;br&gt; W &#x3D; ECONOMY PREMIUM &lt;br&gt; C &#x3D; BUSINESS &lt;br&gt; F &#x3D; FIRST
@@ -126,7 +126,7 @@ public class FlightAvailabilityRequest {
   private CabinClassEnum cabinClass = null;
 
   /**
-   * Gets or Sets tripType
+   * rt &#x3D; Roundtrip &lt;br&gt; ow &#x3D; Oneway &lt;br&gt; md &#x3D; multidestination
    */
   @JsonAdapter(TripTypeEnum.Adapter.class)
   public enum TripTypeEnum {
@@ -194,11 +194,11 @@ public class FlightAvailabilityRequest {
   @SerializedName("nrOfYouth")
   private Integer nrOfYouth = null;
 
-  @SerializedName("requestedFlightNonStop")
-  private Boolean requestedFlightNonStop = null;
+  @SerializedName("directFlight")
+  private Boolean directFlight = null;
 
-  @SerializedName("requestedMultiCity")
-  private Boolean requestedMultiCity = null;
+  @SerializedName("withBaggage")
+  private Boolean withBaggage = null;
 
   public FlightAvailabilityRequest language(LanguageEnum language) {
     this.language = language;
@@ -206,10 +206,10 @@ public class FlightAvailabilityRequest {
   }
 
    /**
-   * Get language
+   * EN &#x3D; English &lt;br&gt; FR &#x3D; French &lt;br&gt; AR &#x3D; Arabic
    * @return language
   **/
-  @Schema(description = "")
+  @Schema(description = "EN = English <br> FR = French <br> AR = Arabic")
   public LanguageEnum getLanguage() {
     return language;
   }
@@ -218,14 +218,14 @@ public class FlightAvailabilityRequest {
     this.language = language;
   }
 
-  public FlightAvailabilityRequest bounds(List<FlightAvailibilityRequestBound> bounds) {
+  public FlightAvailabilityRequest bounds(List<FlightAvailabilityRequestBound> bounds) {
     this.bounds = bounds;
     return this;
   }
 
-  public FlightAvailabilityRequest addBoundsItem(FlightAvailibilityRequestBound boundsItem) {
+  public FlightAvailabilityRequest addBoundsItem(FlightAvailabilityRequestBound boundsItem) {
     if (this.bounds == null) {
-      this.bounds = new ArrayList<FlightAvailibilityRequestBound>();
+      this.bounds = new ArrayList<FlightAvailabilityRequestBound>();
     }
     this.bounds.add(boundsItem);
     return this;
@@ -236,11 +236,11 @@ public class FlightAvailabilityRequest {
    * @return bounds
   **/
   @Schema(example = "[{\"departureDate\":\"2022-01-13\",\"destination\":\"PAR\",\"origin\":\"ALG\"},{\"departureDate\":\"2022-01-20\",\"destination\":\"ALG\",\"origin\":\"PAR\"}]", description = "")
-  public List<FlightAvailibilityRequestBound> getBounds() {
+  public List<FlightAvailabilityRequestBound> getBounds() {
     return bounds;
   }
 
-  public void setBounds(List<FlightAvailibilityRequestBound> bounds) {
+  public void setBounds(List<FlightAvailabilityRequestBound> bounds) {
     this.bounds = bounds;
   }
 
@@ -268,10 +268,10 @@ public class FlightAvailabilityRequest {
   }
 
    /**
-   * Get tripType
+   * rt &#x3D; Roundtrip &lt;br&gt; ow &#x3D; Oneway &lt;br&gt; md &#x3D; multidestination
    * @return tripType
   **/
-  @Schema(description = "")
+  @Schema(description = "rt = Roundtrip <br> ow = Oneway <br> md = multidestination")
   public TripTypeEnum getTripType() {
     return tripType;
   }
@@ -424,40 +424,40 @@ public class FlightAvailabilityRequest {
     this.nrOfYouth = nrOfYouth;
   }
 
-  public FlightAvailabilityRequest requestedFlightNonStop(Boolean requestedFlightNonStop) {
-    this.requestedFlightNonStop = requestedFlightNonStop;
+  public FlightAvailabilityRequest directFlight(Boolean directFlight) {
+    this.directFlight = directFlight;
     return this;
   }
 
    /**
-   * Get requestedFlightNonStop
-   * @return requestedFlightNonStop
+   * if true, the system will reply with direct flights only
+   * @return directFlight
   **/
-  @Schema(description = "")
-  public Boolean isRequestedFlightNonStop() {
-    return requestedFlightNonStop;
+  @Schema(description = "if true, the system will reply with direct flights only")
+  public Boolean isDirectFlight() {
+    return directFlight;
   }
 
-  public void setRequestedFlightNonStop(Boolean requestedFlightNonStop) {
-    this.requestedFlightNonStop = requestedFlightNonStop;
+  public void setDirectFlight(Boolean directFlight) {
+    this.directFlight = directFlight;
   }
 
-  public FlightAvailabilityRequest requestedMultiCity(Boolean requestedMultiCity) {
-    this.requestedMultiCity = requestedMultiCity;
+  public FlightAvailabilityRequest withBaggage(Boolean withBaggage) {
+    this.withBaggage = withBaggage;
     return this;
   }
 
    /**
-   * Get requestedMultiCity
-   * @return requestedMultiCity
+   * if true, the system will reply with recommendations with baggage only
+   * @return withBaggage
   **/
-  @Schema(description = "")
-  public Boolean isRequestedMultiCity() {
-    return requestedMultiCity;
+  @Schema(description = "if true, the system will reply with recommendations with baggage only")
+  public Boolean isWithBaggage() {
+    return withBaggage;
   }
 
-  public void setRequestedMultiCity(Boolean requestedMultiCity) {
-    this.requestedMultiCity = requestedMultiCity;
+  public void setWithBaggage(Boolean withBaggage) {
+    this.withBaggage = withBaggage;
   }
 
 
@@ -482,13 +482,13 @@ public class FlightAvailabilityRequest {
         Objects.equals(this.nrOfInfantWithSeat, flightAvailabilityRequest.nrOfInfantWithSeat) &&
         Objects.equals(this.nrOfSenior, flightAvailabilityRequest.nrOfSenior) &&
         Objects.equals(this.nrOfYouth, flightAvailabilityRequest.nrOfYouth) &&
-        Objects.equals(this.requestedFlightNonStop, flightAvailabilityRequest.requestedFlightNonStop) &&
-        Objects.equals(this.requestedMultiCity, flightAvailabilityRequest.requestedMultiCity);
+        Objects.equals(this.directFlight, flightAvailabilityRequest.directFlight) &&
+        Objects.equals(this.withBaggage, flightAvailabilityRequest.withBaggage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(language, bounds, cabinClass, tripType, flexible, range, nrOfAdult, nrOfChild, nrOfInfant, nrOfInfantWithSeat, nrOfSenior, nrOfYouth, requestedFlightNonStop, requestedMultiCity);
+    return Objects.hash(language, bounds, cabinClass, tripType, flexible, range, nrOfAdult, nrOfChild, nrOfInfant, nrOfInfantWithSeat, nrOfSenior, nrOfYouth, directFlight, withBaggage);
   }
 
 
@@ -509,8 +509,8 @@ public class FlightAvailabilityRequest {
     sb.append("    nrOfInfantWithSeat: ").append(toIndentedString(nrOfInfantWithSeat)).append("\n");
     sb.append("    nrOfSenior: ").append(toIndentedString(nrOfSenior)).append("\n");
     sb.append("    nrOfYouth: ").append(toIndentedString(nrOfYouth)).append("\n");
-    sb.append("    requestedFlightNonStop: ").append(toIndentedString(requestedFlightNonStop)).append("\n");
-    sb.append("    requestedMultiCity: ").append(toIndentedString(requestedMultiCity)).append("\n");
+    sb.append("    directFlight: ").append(toIndentedString(directFlight)).append("\n");
+    sb.append("    withBaggage: ").append(toIndentedString(withBaggage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

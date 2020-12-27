@@ -17,7 +17,7 @@ import io.swagger.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-25T18:44:13.943Z[GMT]")public class ApiKeyAuth implements Authentication {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-27T12:15:25.449Z[GMT]")public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
 
